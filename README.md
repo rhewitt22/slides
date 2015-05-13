@@ -1,3 +1,3 @@
 # presentations
 
-## [Story Maps](presentations.royhewitt.com/story-maps)
+## [Story Maps](http://presentations.royhewitt.com/story-maps)
