@@ -1,188 +1,325 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
 
-		<title>Introduction to Web Mapping</title>
+  <head>
+    <meta charset="utf-8">
 
-		<meta name="description" content="A presentation for MaptimeATL on getting started with web mapping">
-		<meta name="author" content="Roy Hewitt">
+    <title>Introduction to Web Mapping</title>
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="A presentation for MaptimeATL on getting started with web mapping">
+    <meta name="author" content="Roy Hewitt">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-	<body>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-		<div class="reveal">
+  <body>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h2>Getting Started with Web Maps</h2>
-				</section>
+    <div class="reveal">
 
-				<section>
-					<h2>Introductions</h2>
-					<p><a href="http://twitter.com/maptimeatl">@MaptimeATL</a> or 
-					<a href="http://maptime.io/atlanta">maptime.io/atlanta</a></p>
-					<p><a href="http://twitter.com/r0yhewitt">@r0yhewitt</a></p>
-				</section>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2>Getting Started with Web Maps</h2>
+        </section>
 
-				<section>
-					<section>
-						<h2>Getting Started</h2>
-						<p>What components make up a web map?</p>
-					</section>
-					<section>
-						<h2>Mapping Libraries</h2>
-						<p>Software that enables 'Slippy Maps'.  The web mapping library handles all of the gnarly bits like loading only the tiles you need as the user pans and zooms and emitting events when the user clicks on map markers.</p>
+        <section>
+          <h2>Introductions</h2>
+          <p><a href="http://twitter.com/maptimeatl">@MaptimeATL</a> or 
+          <a href="http://maptime.io/atlanta">maptime.io/atlanta</a></p>
+          <p><a href="http://twitter.com/r0yhewitt">@r0yhewitt</a></p>
+        </section>
 
-						<ul>
-							<li>Google Maps</li>
-							<li>Leaflet</li>
-							<li>Mapbox (+ GL)</li>
-							<li>Modest Maps</li>
-							<li>A bagillion more</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Basemaps</h2>
-						<p>Contextual background layer that inform the user where they are on the planet.</p>
-					</section>
-					<section>
-						<h2>Map Tiles</h2>
-						<p>Rather than a single large file, web maps chop up huge images into bit-sized square images called <strong>tiles</strong>.</p>
-					</section>
-					<section>
-						<h2>Displaying Data</h2>
-						<p>Each zoom layer can display different map data and labels.</p>
-						<p>You wouldn't, for example, display streets when you're zoomed out at to the Continental level.</p>
-					</section>
-					<section>
-						<h2>Simple Basemaps</h2>
+        <section>
+          <section>
+            <h2>Getting Started</h2>
+            <p>What components make up a web map?</p>
+          </section>
+          <section>
+            <h2>Mapping Libraries</h2>
+            <p>Software that enables 'Slippy Maps'.  The web mapping library handles all of the gnarly bits like loading only the tiles you need as the user pans and zooms and emitting events when the user clicks on map markers.</p>
 
-						<iframe src="./demos/map-simple.html" style="width:100%; height:300px;"></iframe><small>&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a></small>
-					<pre><code data-trim contenteditable>
-						var map = L.map('map').setView([33.775133, -84.381808], 9);
+            <ul>
+              <li>Google Maps</li>
+              <li>Leaflet</li>
+              <li>Mapbox (+ GL)</li>
+              <li>Modest Maps</li>
+              <li>A bagillion more</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Basemaps</h2>
+            <p>Contextual background layer that inform the user where they are on the planet.</p>
+          </section>
+          <section>
+            <h2>Map Tiles</h2>
+            <p>Rather than a single large file, web maps chop up huge images into bit-sized square images called <strong>tiles</strong>.</p>
+          </section>
+          <section>
+            <h2>Displaying Data</h2>
+            <p>Each zoom layer can display different map data and labels.</p>
+            <p>You wouldn't, for example, display streets when you're zoomed out at to the Continental level.</p>
+          </section>
+          <section>
+            <h2>Simple Basemaps</h2>
 
-						L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
-							maxZoom: 18,
-						}).addTo(map);
-					</code></pre>
-					</section>
-					<section>
-						<h2>Artistic Basemaps</h2>
+            <iframe src="./demos/map-simple.html" style="width:100%; height:300px;"></iframe><small>&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a></small>
+<pre><code data-trim contenteditable>
+var map = L.map('map').setView([33.775133, -84.381808], 9);
 
-						<iframe src="./demos/map-artsy.html" style="width:100%; height:300px;"></iframe>
-						<small>Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> </small>
-						<pre><code data-trim contenteditable>
-							var map = L.map('map').setView([33.775133, -84.381808], 9);
-								
-							L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
-								subdomains: 'abcd',
-								minZoom: 1,
-							 	maxZoom: 16,
-								ext: 'png'
-							}).addTo(map);
-						</code></pre>
+L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+}).addTo(map);
+</code></pre>
+          </section>
+          <section>
+            <h2>Artistic Basemaps</h2>
 
-					</section>
-					<section>
-						<h2>Basemap Providers</h2>
-						<p>My favorite resource for picking a basemap is the <a href="https://leaflet-extras.github.io/leaflet-providers/preview/">Leaflet Providers Demo</a>.</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Data Overlays</h2>
-						<p>The meat and potatoes of your web map.  What information are you trying to show on top of your basemap?</p>
-					</section>
-					<section>
-						<h2>Getting data on a Map</h2>
-						<p>Mapping libraries will handle most web services, and GeoJSON for you out of the box.</p>
-					</section>
-					<section>
-						<h2>Feature Data</h2>
-						<p>Often comes in the form of a flat file that you can store with your project.</p>
-						<ul>
-							<li>ESRI Shapefile</li>
-							<li>GeoJSON</li>
-							<li>CSV</li>
-							<li>File from your GPS</li>
-							<li>...more</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Maptime Chapters from GeoJSON</h2>
-
-						<iframe src="https://rawgit.com/rhewitt22/slides/gh-pages/web-maps/demos/map-chapters.html" style="width:100%; height:300px;"></iframe>
-						
-						<small>Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> </small>
-						<pre><code>
-  $.getJSON('//rawgit.com/maptime/maptime.github.io/master/_data/chapters.json', function(chapters) {
-	var geojson = L.geoJson(chapters).addTo(map);
-	map.fitBounds(geojson.getBounds());
-  });
+            <iframe src="./demos/map-artsy.html" style="width:100%; height:300px;"></iframe>
+            <small>Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> </small>
+<pre><code data-trim contenteditable>
+var map = L.map('map').setView([33.775133, -84.381808], 9);
+    
+L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
+  subdomains: 'abcd',
+  minZoom: 1,
+  maxZoom: 16,
+  ext: 'png'
+}).addTo(map);
 </code></pre>
 
-					</section>
+          </section>
+          <section>
+            <h2>Basemap Providers</h2>
+            <p>My favorite resource for picking a basemap is the <a href="https://leaflet-extras.github.io/leaflet-providers/preview/">Leaflet Providers Demo</a>.</p>
+          </section>
+        </section>
 
-				</section>
+        <section>
+          <section>
+            <h2>Data Overlays</h2>
+            <p>The meat and potatoes of your web map.  What information are you trying to show on top of your basemap?</p>
+          </section>
+          <section>
+            <h2>Getting data on a Map</h2>
+            <p>Mapping libraries will handle most web services, and GeoJSON for you out of the box.</p>
+          </section>
+          <section>
+            <h2>Feature Data</h2>
+            <p>Often comes in the form of a flat file that you can store with your project.</p>
+            <ul>
+              <li>ESRI Shapefile</li>
+              <li>GeoJSON</li>
+              <li>CSV</li>
+              <li>File from your GPS</li>
+              <li>...more</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Maptime Chapters from GeoJSON</h2>
 
-			</div>
+            <iframe src="./demos/map-chapters.html" style="width:100%; height:300px;"></iframe>
+            <small>Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> </small>
+<pre><code>
+$.getJSON('//rawgit.com/maptime/maptime.github.io/master/_data/chapters.json', function(chapters) {
+  var geojson = L.geoJson(chapters).addTo(map);
+  map.fitBounds(geojson.getBounds());
+});
+</code></pre>
+          </section>
+          <section>
+            <h2>When to use Feature Layers</h2>
+            <ul>
+              <li>Simple features (not super complex polygons/lines)</li>
+              <li>Need to handle user interaction (click, drag, etc.)
+                <ul>
+                  <li>Work with the attributes of the marker you click</li>
+                  <li>Popup-bubbles</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Web Services</h2>
 
-		</div>
+            <p>When you have lots of data you can make it available as a service, and have the map request only what it needs.</p>
+            <ul>
+              <li>Display data differently at different zoom levels</li>
+              <li>Better for polygon data with lots of vertices</li>
+              <li>Requires a server</li>
+              <li><a href="http://www.opengeospatial.org/standards/is">Well defined standards</a></li>
+            </ul>
+          </section>
+          <section>
+          <h2>Web Mapping Service</h2>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+          <iframe src="./demos/map-temperature.html" style="width:100%; height:300px;"></iframe>
+          <small>Map Data: NOAA, Temperature</small>
+<pre><code>
+L.tileLayer.wms('//gis.srh.noaa.gov/arcgis/services/NDFDTemps/MapServer/WMSServer', {
+  format: 'img/png',
+  transparent: true,
+  layers: 16
+}).addTo(map);
+</code></pre>
+          </section>
+          <section>
+            <h2>When to use Mapping Services</h2>
 
-		<script>
+            <ul>
+              <li>Display differently depending on zoom level</li>
+              <li>Working with lots of data</li>
+              <li>Complex polygons/lines</li>
+              <li>Consuming public data</li>
+              <li>When the service is updated, your map is updated automatically</li>
+            </ul>
+          </section>
+        </section>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        <section>
+          <section data-background="./img/lmgtfy.png">
+            <h2>Finding Data</h2>
+            <p>Use your search term + "Shapefile", or "WMS", and the hunt begins.</p>
+          </section>
+          <section>
+            <h2>Creating Data</h2>
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+            <p>Collect data in the field or create it with your laptop.</p>
+            <ul>
+              <li><a href="http://openpaths.cc">OpenPaths:</a> Background app for iPhone that collects encrypted location data</li>
+              <li><a href="http://geojson.io">Geojson.io:</a> Create a GeoJSON file with attributes in your browser.</li>
+              <li><a href="http://qgis.org">qGIS:</a> Open Source Desktop GIS Software</li>
+              <li>Fire up a spreadsheet and save a CSV with a field for lat/lon coordinates</li>
+            </ul>
+          </section>
+        </section>
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+        <section>
+          <section>
+            <h2>Converting between Formats</h2>
+            <p>Maybe you want to do the heavy lifting of data conversion up-front rather than leaving it to the browser.</p>
+          </section>
+          <section>
+            <h2>Web Tools</h2>
+            <ul>
+              <li><a href="http://ogre.adc4gis.com/">ogre.adc4gis.com:</a> A web GUI for command line GIS</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Desktop GIS</h2>
+            <ul>
+              <li><a href="">Qgis:</a> Free Desktop GIS software that wraps around command line GIS </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Command Line</h2>
+            <ul>
+              <li><a href="http://www.gdal.org/">Geospatial Data Abstraction Library: </a>GDAL is the command line tool everyone uses under the hood.</li>
+              <li><a href="https://github.com/dwtkns/gdal-cheat-sheet">GDAL Cheatsheet</a></li>
+            </ul>
+<pre>
+  <code>
+brew install gdal
+    
+# Convert ESRI Shapefile to GeoJSON
+ogr2ogr -f "GeoJSON" output.json input.shp  
+  </code>
+</pre>
+          </section>
+        </section>
 
-		</script>
+        <section>
+          <section>
+            <h2>Plugins Galore</h2>
+            <p>Leaflet is really good at maintaining it's diet.</p>
 
-	</body>
+            <p>Anything Leaflet core doesn't do has likely been implemented as a plugin already!</p>
+          </section>
+          <section>
+            <h2><a href="https://github.com/mapbox/leaflet-omnivore">Leaflet Omnivore</a></h2>
+            <p>A plugin for leaflet that eats up data and puts it on your map</p>
+            <ul>
+              <li>CSV</li>
+              <li>GPX</li>
+              <li>KML</li>
+              <li>WKT</li>
+              <li>TopoJSON</li>
+              <li>Encoded Polylines via polyline</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Omnivore Example</h2>
+            <p>Atlanta Neighborhoods as <a href="../data/neighborhoods.kml">KML</a></p>
+            <iframe src="./demos/map-neighborhoods.html" style="width:100%; height:300px;"></iframe>
+            <small>Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> </small>
+<pre><code>
+var map = L.map('map').setView([33.775133, -84.381808], 9);
+var neighborhoods = omnivore.kml('../data/neighborhoods.kml')
+  .on('ready', function() {
+    map.fitBounds(neighborhoods.getBounds());
+  }).addTo(map);
+</code></pre>
+
+          </section>
+          <section>
+            <h2>Leaflet Shapefile</h2>
+            <h4>(for Aton!)</h4>
+            <p><a href="https://github.com/calvinmetcalf/leaflet.shapefile">Leaflet Shapefile:</a> A plugin for converting an ESRI Shapefile to L.GeoJSON.</p>
+          </section>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
 </html>
