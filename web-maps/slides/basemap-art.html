@@ -1,3 +1,14 @@
-<h2>basemap-art</h2>
+<h2>Artistic Basemaps</h2>
 
-<p>Please change me!</p>
+<iframe src="../demos/map-artsy.html" style="width:100%; height:300px;"></iframe>
+<small>Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> </small>
+<pre><code>
+  var map = L.map('map').setView([33.775133, -84.381808], 9);
+      
+  L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
+    subdomains: 'abcd',
+    minZoom: 1,
+    maxZoom: 16,
+    ext: 'png'
+  }).addTo(map);
+</code></pre>

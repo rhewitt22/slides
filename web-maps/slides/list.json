@@ -5,17 +5,18 @@
         "getting-started.md",
         "mapping-libraries.md",
         "basemaps.md",
+        "map-tiles.md",
+        "displaying-data.md",
         "basemap-simple.html",
         "basemap-art.html",
-        "data-overlays.md"
+        "basemap-providers.md"
     ],
     [
-        "map-tiles.md",
-        "displaying-data.md"
-    ],
-    [
+        "data-overlays.md",
         "feature-data.md",
-        "web-services.md"
+        "maptime-chapters.html",
+        "web-services.md",
+        "wms-example.html"
     ],
     [
         "finding-data.md",

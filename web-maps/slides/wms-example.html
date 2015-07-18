@@ -1,0 +1,11 @@
+<h2>Web Mapping Service</h2>
+
+<iframe src="../demos/map-temperature.html" style="width:100%; height:300px;"></iframe>
+<small>Map Data: NOAA, Temperature</small>
+<pre><code>
+  L.tileLayer.wms('//gis.srh.noaa.gov/arcgis/services/NDFDTemps/MapServer/WMSServer', {
+      format: 'img/png',
+      transparent: true,
+      layers: 16
+  }).addTo(map);
+</code></pre>

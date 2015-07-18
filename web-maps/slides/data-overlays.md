@@ -1,3 +1,3 @@
-##  data-overlays
+##  Data Overlays
 
-This is a new Markdown slide
+The meat and potatoes of your web map.  What information are you trying to show on top of your basemap?

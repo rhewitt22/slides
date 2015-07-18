@@ -5,7 +5,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
   <style>
-    body {height: 100%;}
+    body,html {height: 100%;}
     #map {height: 100%; width: 100%;}
   </style>
 </head>
@@ -14,7 +14,12 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
   <script>
     (function() {
-      var map = L.map('map').setView([33.775133, -84.381808], 9);
+      var map = L.map('map').setView([37.6,-95.665], 3);
+      L.tileLayer.wms('http://gis.srh.noaa.gov/arcgis/services/NDFDTemps/MapServer/WMSServer', {
+          format: 'img/png',
+          transparent: true,
+          layers: 16
+      }).addTo(map);
       
     })();
    </script>
