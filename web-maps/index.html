@@ -52,6 +52,11 @@
         </section>
 
         <section>
+          <h2>Demos</h2>
+          <p>All demonstration code is available in this [repository](https://github.com/rhewitt22/slides/tree/gh-pages/web-maps) under the <strong>demo</strong> directory.  A very brief code snipped of the important bits will be included in the slides.</p>
+        </section>
+
+        <section>
           <section>
             <h2>Getting Started</h2>
             <p>What components make up a web map?</p>
@@ -286,6 +291,16 @@ var neighborhoods = omnivore.kml('../data/neighborhoods.kml')
             <h2>Leaflet Shapefile</h2>
             <h4>(for Aton!)</h4>
             <p><a href="https://github.com/calvinmetcalf/leaflet.shapefile">Leaflet Shapefile:</a> A plugin for converting an ESRI Shapefile to L.GeoJSON.</p>
+          </section>
+          <section>
+            <h2>Georgia as a Shapefile</h2>
+            <p>Download shapefile <a href="../data/georgia.zip">Shapefile</a></p>
+            <iframe src="./demos/map-shapefile.html" style="width:100%; height:300px;"></iframe>
+            <small>Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> </small>
+<pre><code>
+var map = L.map('map').setView([33.775133, -84.381808], 9);
+var georgia = L.shapefile('../data/georgia.zip').addTo(map);
+</code></pre>
           </section>
         </section>
 

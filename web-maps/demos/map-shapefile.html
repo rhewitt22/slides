@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+  <style>
+    body, html {height: 100%;}
+    #map {height: 100%; width: 100%;}
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  <script src="https://rawgit.com/calvinmetcalf/shapefile-js/gh-pages/dist/shp.min.js"></script>
+  <script src="https://rawgit.com/calvinmetcalf/leaflet.shapefile/gh-pages/leaflet.shpfile.js"></script>
+  <script>
+    (function() {
+      var map = L.map('map').setView([33.775133, -84.381808], 5);
+      L.tileLayer('//stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+        attribution: false,
+        subdomains: 'abcd',
+        minZoom: 0,
+        maxZoom: 20,
+        ext: 'png'
+      }).addTo(map);
+
+      var georgia = L.shapefile('../data/georgia.zip').addTo(map);
+    })();
+   </script>
+</body>
+</html>
