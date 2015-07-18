@@ -1,0 +1,35 @@
+[
+    "index.md",
+    "introductions.md",
+    [
+        "getting-started.md",
+        "mapping-libraries.md",
+        "basemaps.md",
+        "basemap-simple.html",
+        "basemap-art.html",
+        "data-overlays.md"
+    ],
+    [
+        "map-tiles.md",
+        "displaying-data.md"
+    ],
+    [
+        "feature-data.md",
+        "web-services.md"
+    ],
+    [
+        "finding-data.md",
+        "creating-data.md"
+    ],
+    [
+        "getting-your-data-on-a-map.md",
+        "leaflet-omnivore.md",
+        "leaflet-shapefile.md"
+    ],
+    [
+        "converting-between-formats.md",
+        "web-tools.md",
+        "desktop-gis.md",
+        "command-line.md"
+    ]
+]
