@@ -244,8 +244,7 @@
               { src: 'js/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
               { src: 'js/revealjs/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( '[data-html]' ) || !!document.querySelector( 'pre code' ) || !!document.querySelector( '[data-markdown]' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
               { src: 'js/revealjs/plugin/zoom-js/zoom.js', async: true },
-              { src: 'js/revealjs/plugin/notes/notes.js', async: true },
-              { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
+              { src: 'js/revealjs/plugin/notes/notes.js', async: true }
             ]
           });
 
