@@ -13,18 +13,22 @@
     ],
     [
         "data-overlays.md",
+        "getting-your-data-on-a-map.md",
         "feature-data.md",
         "maptime-chapters.html",
+        "when-feature-layer.md",
         "web-services.md",
-        "wms-example.html"
+        "wms-example.html",
+        "when-mapping-service.md"
     ],
     [
-        "finding-data.md",
+        "finding-data.html",
         "creating-data.md"
     ],
     [
-        "getting-your-data-on-a-map.md",
+        "plugins-galore.md",
         "leaflet-omnivore.md",
+        "omnivore-example.html",
         "leaflet-shapefile.md"
     ],
     [
