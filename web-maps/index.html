@@ -43,17 +43,33 @@
         <section>
           <h2>Getting Started with Web Maps</h2>
         </section>
-
+        
         <section>
-          <h2>Introductions</h2>
-          <p><a href="http://twitter.com/maptimeatl">@MaptimeATL</a> or 
-          <a href="http://maptime.io/atlanta">maptime.io/atlanta</a></p>
-          <p><a href="http://twitter.com/r0yhewitt">@r0yhewitt</a></p>
-        </section>
+          <section>
+            <h2>Housekeeping</h2>
+            <h3>Welcome to <a href="http://maptime.io">Maptime!</a></h3>
+            <p><a href="http://twitter.com/maptimeatl">@MaptimeATL</a> or 
+            <a href="http://maptime.io/atlanta">maptime.io/atlanta</a></p>
+          </section>
 
-        <section>
-          <h2>Demos</h2>
-          <p>All demonstration code is available in this [repository](https://github.com/rhewitt22/slides/tree/gh-pages/web-maps) under the <strong>demo</strong> directory.  A very brief code snipped of the important bits will be included in the slides.</p>
+          <section>
+            <h2>Who is this clown?</h2>
+            <p>I'm Roy Hewitt, Web Developer for the Southeast Region of the U.S. Fish &amp; Wildlife Service</p>
+            <p><a href="http://twitter.com/r0yhewitt">@r0yhewitt</a></p>
+            <p>Required disclaimer: All opinions are my own!</p>
+          </section>
+          
+          <section>
+            <h2>Demos</h2>
+            <p>All demonstration code is available in this <a href="https://github.com/rhewitt22/slides/tree/gh-pages/web-maps">repository</a> under the <strong><a href="https://github.com/rhewitt22/slides/tree/gh-pages/web-maps/demos">demo</a></strong> directory.</p>  
+            <p>A brief code snipped of the most important bits of each demo will be included in the slides.</p>
+          </section>
+          <section>
+            <h2>Suggested Reading</h2>
+            <p>I've included some suggested reading if you want to dive deeper into some of the concepts from this talk.</p>
+            <p>Disclaimer: I don't work for Mapbox, but I think they're pretty cool plus they write excellent guides and documentation.</p>
+            <p>All of the examples in this talk use <a href="http://leafletjs.com">LeafletJS</a>.</p>
+          </section>
         </section>
 
         <section>
@@ -75,11 +91,12 @@
           </section>
           <section>
             <h2>Basemaps</h2>
-            <p>Contextual background layer that inform the user where they are on the planet.</p>
+            <p>Provide a contextual background layer that inform the user where they are on the planet.</p>
           </section>
           <section>
             <h2>Map Tiles</h2>
-            <p>Rather than a single large file, web maps chop up huge images into bit-sized square images called <strong>tiles</strong>.</p>
+            <p>Rather than a single large file, web maps chop up huge images into bite-sized square images called <strong>tiles</strong>.</p>
+            <p>Suggested Reading: <a href="https://www.mapbox.com/guides/how-web-maps-work/">How do Web Maps Work by Mapbox</a></p>
           </section>
           <section>
             <h2>Displaying Data</h2>
@@ -89,7 +106,8 @@
           <section>
             <h2>Simple Basemaps</h2>
 
-            <iframe src="./demos/map-simple.html" style="width:100%; height:300px;"></iframe><small>&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a></small>
+            <iframe src="./demos/map-simple.html" style="width:100%; height:300px;"></iframe>
+            <small>Map Tiles by <a href="http://mapnik.org/">Mapnik</a>.  Map Data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a></small>
 <pre><code data-trim contenteditable>
 var map = L.map('map').setView([33.775133, -84.381808], 9);
 
@@ -97,6 +115,7 @@ L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
   maxZoom: 18,
 }).addTo(map);
 </code></pre>
+            <p><a href="https://github.com/rhewitt22/slides/blob/gh-pages/web-maps/demos/map-simple.html">View source</a></p>
           </section>
           <section>
             <h2>Artistic Basemaps</h2>
@@ -113,6 +132,7 @@ L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png
   ext: 'png'
 }).addTo(map);
 </code></pre>
+            <p><a href="https://github.com/rhewitt22/slides/blob/gh-pages/web-maps/demos/map-artsy.html">View source</a></p>
 
           </section>
           <section>
@@ -125,6 +145,7 @@ L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png
           <section>
             <h2>Data Overlays</h2>
             <p>The meat and potatoes of your web map.  What information are you trying to show on top of your basemap?</p>
+            <p>Suggested Reading: <a href="https://www.mapbox.com/guides/master-web-map-layers/">Mastering Web Map Layers</a> by Mapbox</p>
           </section>
           <section>
             <h2>Getting data on a Map</h2>
@@ -152,6 +173,7 @@ $.getJSON('//rawgit.com/maptime/maptime.github.io/master/_data/chapters.json', f
   map.fitBounds(geojson.getBounds());
 });
 </code></pre>
+            <p><a href="https://github.com/rhewitt22/slides/blob/gh-pages/web-maps/demos/map-chapters.html">View source</a></p>
           </section>
           <section>
             <h2>When to use Feature Layers</h2>
@@ -180,7 +202,7 @@ $.getJSON('//rawgit.com/maptime/maptime.github.io/master/_data/chapters.json', f
           <h2>Web Mapping Service</h2>
 
           <iframe src="./demos/map-temperature.html" style="width:100%; height:300px;"></iframe>
-          <small>Map Data: NOAA, Temperature</small>
+          <small>Map Data: <a href="http://gis.srh.noaa.gov/arcgis/rest/services">NOAA</a>, Temperature</small>
 <pre><code>
 L.tileLayer.wms('//gis.srh.noaa.gov/arcgis/services/NDFDTemps/MapServer/WMSServer', {
   format: 'img/png',
@@ -188,6 +210,7 @@ L.tileLayer.wms('//gis.srh.noaa.gov/arcgis/services/NDFDTemps/MapServer/WMSServe
   layers: 16
 }).addTo(map);
 </code></pre>
+            <p><a href="https://github.com/rhewitt22/slides/blob/gh-pages/web-maps/demos/map-temperature.html">View source</a></p>
           </section>
           <section>
             <h2>When to use Mapping Services</h2>
@@ -196,16 +219,23 @@ L.tileLayer.wms('//gis.srh.noaa.gov/arcgis/services/NDFDTemps/MapServer/WMSServe
               <li>Display differently depending on zoom level</li>
               <li>Working with lots of data</li>
               <li>Complex polygons/lines</li>
-              <li>Consuming public data</li>
-              <li>When the service is updated, your map is updated automatically</li>
+              <li>Consuming public data
+                <ul>
+                  <li>When the service is updated, your map is updated automatically</li>
+                </ul>
+              </li>
             </ul>
           </section>
         </section>
 
         <section>
+          <section>
+            <h2>Finding Data</h2>
+            <p>There is a huge amount of data produced and maintained by Government agencies large and small.</p>
+            <p>Open data is a good thing, plus for the Feds, <a href="https://www.whitehouse.gov/the-press-office/2013/05/09/executive-order-making-open-and-machine-readable-new-default-government-">it's a rule</a>.</p>
+          </section>
           <section data-background="./img/lmgtfy.png">
             <div style="background-color: white; border-radius: 5px; border: 3px solid black">
-              <h2>Finding Data</h2>
               <p>Use your search term + "Shapefile", or "WMS", and the hunt begins.</p>
             </div>
           </section>
@@ -263,7 +293,7 @@ ogr2ogr -f "GeoJSON" output.json input.shp
           </section>
           <section>
             <h2><a href="https://github.com/mapbox/leaflet-omnivore">Leaflet Omnivore</a></h2>
-            <p>A plugin for leaflet that eats up data and puts it on your map</p>
+            <p>A plugin for leaflet that eats up data and puts it on a map</p>
             <ul>
               <li>CSV</li>
               <li>GPX</li>
@@ -285,7 +315,7 @@ var neighborhoods = omnivore.kml('../data/neighborhoods.kml')
     map.fitBounds(neighborhoods.getBounds());
   }).addTo(map);
 </code></pre>
-
+            <p><a href="https://github.com/rhewitt22/slides/blob/gh-pages/web-maps/demos/map-neighborhoods.html">View source</a></p>
           </section>
           <section>
             <h2>Leaflet Shapefile</h2>
@@ -301,7 +331,67 @@ var neighborhoods = omnivore.kml('../data/neighborhoods.kml')
 var map = L.map('map').setView([33.775133, -84.381808], 9);
 var georgia = L.shapefile('../data/georgia.zip').addTo(map);
 </code></pre>
+            <p><a href="https://github.com/rhewitt22/slides/blob/gh-pages/web-maps/demos/map-shapefile.html">View source</a></p>
           </section>
+          <section>
+            <h2><a href="https://github.com/Leaflet/Leaflet.draw">Leaflet Draw</a></h2>
+            <p>A plugin for accepting user input to create features.</p>
+            <ul>
+              <li>Drawing an area for clip-and-ship downloads</li>
+              <li>Taking in features to save to your project's database</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Leaflet Draw Example</h2>
+            <iframe src="./demos/map-draw.html" style="width:100%; height:300px;"></iframe>
+            <small>Map Tiles: &copy; <a href="http://cartodb.com/attributions">CartoDB</a> Map Data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>  </small>
+            <p>Too much to show in one snippet. <a href="https://github.com/rhewitt22/slides/blob/gh-pages/web-maps/demos/map-draw.html">View the source.</a></p>
+          </section>
+          <section>
+            <h2><a href="https://github.com/Leaflet/Leaflet.markercluster">Leaflet Markerclusterer</a></h2>
+            <p>Once you start displaying lots of markers it can be difficult to target a single marker for with your cursor (or finger).  </p>
+            <p>Thousands of markers will eventually slow down user interaction.</p>
+          </section>
+          <section>
+            <h2>Markercluster Example</h2>
+            <iframe src="./demos/map-markercluster.html" style="width:100%; height:300px;"></iframe>
+            <small>Map Tiles: &copy; <a href="http://cartodb.com/attributions">CartoDB</a> Map Data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>  </small>
+            <p>Too much to show in one snippet. <a href="https://github.com/rhewitt22/slides/blob/gh-pages/web-maps/demos/map-markercluster.html">View the source.</a></p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Moving beyond points on a map</h2>
+            <p>Maps are great for showing geographic data, but they are great User Interface tools, too!</p>
+          </section>
+          <section>
+            <h2>Suggested Reading</h2>
+            <blockquote>“Have you ever taken apart a map? Worked with a map as a critical part of your design?”</blockquote>
+            <p><a href="http://alistapart.com/article/hack-your-maps">Hack your Maps by Young Hahn</a></p>
+          </section>
+          <section>
+            <h2>But Seriously</h2>
+            <p><a href="http://alistapart.com/article/hack-your-maps">You should read this.</a></p>
+          </section>
+          <section>
+            <h2><a href="slides.royhewitt.com/story-maps">Story Maps</a></h2>
+            <blockquote>“Story maps use geography as a means of organizing and presenting information. They tell the story of a place, event, issue, trend, or pattern in a geographic context. They combine interactive maps with other rich content—text, photos, video, and audio—within user experiences that are basic and intuitive.”</blockquote>
+            <small>-ESRI</small>
+          </section>
+          <section>
+            <h2>Last Example</h2>
+            <p><a href="http://codepen.io/rhewitt/full/aOjVBB/">Map as a User Interface</a></p>
+            <p data-height="500" data-theme-id="0" data-slug-hash="aOjVBB" data-default-tab="result" data-user="rhewitt" class='codepen'>See the Pen <a href='http://codepen.io/rhewitt/pen/aOjVBB/'>aOjVBB</a> by Roy Hewitt (<a href='http://codepen.io/rhewitt'>@rhewitt</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+          </section>
+        </section>
+
+        <section>
+          <h2>Thanks!</h2>
+          <p>Questions?</p>
+          <p><a href="http://maptime.io/atlanta">MaptimeATL</a></p>
+          <p><a href="http//twitter.com/maptimeatl">@maptimeATL</a> <a href="http://twitter.com/r0yhewitt">@r0yhewitt</a></p>
         </section>
 
       </div>

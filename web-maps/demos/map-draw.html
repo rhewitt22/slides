@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.css">
+  
+  <style>
+    body, html {height: 100%;}
+    #map {height: 100%; width: 100%;}
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script>
+  <script>
+    (function() {
+      var map = L.map('map', {drawControl: true}).setView([33.775133, -84.381808], 9),
+        drawnItems = new L.FeatureGroup(),
+        drawControl = new L.Control.Draw({
+          edit: {
+              featureGroup: drawnItems
+          }
+        });
+      
+      map.addControl(drawControl);
+      map.addLayer(drawnItems);
+      
+      map.on('draw:created', function (e) {
+        var type = e.layerType,
+          layer = e.layer;
+        if (type === 'marker') {
+          layer.bindPopup('A popup!');
+        }
+        drawnItems.addLayer(layer);
+      });
+      map.on('draw:edited', function (e) {
+        var layers = e.layers;
+        var countOfEditedLayers = 0;
+        layers.eachLayer(function(layer) {
+          countOfEditedLayers++;
+        });
+        console.log("Edited " + countOfEditedLayers + " layers");
+      });
+
+      L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: false,
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+    })();
+   </script>
+</body>
+</html>
