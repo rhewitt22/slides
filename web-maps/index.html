@@ -43,12 +43,12 @@
         <section>
           <h2>Getting Started with Web Maps</h2>
         </section>
-        
+
         <section>
           <section>
             <h2>Housekeeping</h2>
             <h3>Welcome to <a href="http://maptime.io">Maptime!</a></h3>
-            <p><a href="http://twitter.com/maptimeatl">@MaptimeATL</a> or 
+            <p><a href="http://twitter.com/maptimeatl">@MaptimeATL</a> or
             <a href="http://maptime.io/atlanta">maptime.io/atlanta</a></p>
           </section>
 
@@ -58,10 +58,10 @@
             <p><a href="http://twitter.com/r0yhewitt">@r0yhewitt</a></p>
             <p>Required disclaimer: All opinions are my own!</p>
           </section>
-          
+
           <section>
             <h2>Demos</h2>
-            <p>All demonstration code is available in this <a href="https://github.com/rhewitt22/slides/tree/gh-pages/web-maps">repository</a> under the <strong><a href="https://github.com/rhewitt22/slides/tree/gh-pages/web-maps/demos">demo</a></strong> directory.</p>  
+            <p>All demonstration code is available in this <a href="https://github.com/rhewitt22/slides/tree/gh-pages/web-maps">repository</a> under the <strong><a href="https://github.com/rhewitt22/slides/tree/gh-pages/web-maps/demos">demo</a></strong> directory.</p>
             <p>A brief code snipped of the most important bits of each demo will be included in the slides.</p>
           </section>
           <section>
@@ -76,16 +76,17 @@
           <section>
             <h2>Getting Started</h2>
             <p>What components make up a web map?</p>
+            <p>Suggested Reading <a href="http://maptime.io/anatomy-of-a-web-map">MaptimeHQ: Anatomy of a Web Map</a></p>
           </section>
           <section>
             <h2>Mapping Libraries</h2>
             <p>Software that enables 'Slippy Maps'.  The web mapping library handles all of the gnarly bits like loading only the tiles you need as the user pans and zooms and emitting events when the user clicks on map markers.</p>
 
             <ul>
-              <li>Google Maps</li>
-              <li>Leaflet</li>
-              <li>Mapbox (+ GL)</li>
-              <li>Modest Maps</li>
+              <li><a href="https://developers.google.com/maps/">Google Maps</a></li>
+              <li><a href="http://leafletjs.com/">Leaflet</a></li>
+              <li><a href="https://www.mapbox.com/mapbox.js/api/v2.2.1/">Mapbox</a> (<a href="https://www.mapbox.com/mapbox-gl-js/api/">+ GL</a>)</li>
+              <li><a href="http://modestmaps.com/">Modest Maps</a></li>
               <li>A bagillion more</li>
             </ul>
           </section>
@@ -124,7 +125,7 @@ L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
             <small>Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> </small>
 <pre><code data-trim contenteditable>
 var map = L.map('map').setView([33.775133, -84.381808], 9);
-    
+
 L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
   subdomains: 'abcd',
   minZoom: 1,
@@ -277,9 +278,9 @@ L.tileLayer.wms('//gis.srh.noaa.gov/arcgis/services/NDFDTemps/MapServer/WMSServe
             </ul>
 <pre><code>
 brew install gdal
-    
+
 # Convert ESRI Shapefile to GeoJSON
-ogr2ogr -f "GeoJSON" output.json input.shp  
+ogr2ogr -f "GeoJSON" output.json input.shp
 </code></pre>
           </section>
         </section>
