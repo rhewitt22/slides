@@ -31,7 +31,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -60,6 +60,7 @@
 					<h1>Story Maps</h1>
 					<h3>Using Maps to Craft User Interfaces</h3>
 					<p>April 19th, 2016 <br>Athens, GA</p>
+					<p>Slides: <a href="http://bit.ly/1SpWDgC">bit.ly/1SpWDgC</a></p>
 				</section>
 
 				<section>
@@ -72,10 +73,12 @@
 						<section>
 							<h2>Agenda</h2>
 							<ol>
-								<li>What are Story Maps all about?</li>
-								<li>How do I make a Story Map?</li>
-								<li>What tools are out there?</li>
-								<li>Show me the dang examples!</li>
+								<li>What is a Story Map?</li>
+								<li>Path to Story Map Mastery</li>
+								<li>Our approach in the Southeast</li>
+								<li>Challenges</li>
+								<li>Examples</li>
+								<li>Resources</li>
 							</ol>
 						</section>
 				</section>
@@ -123,24 +126,33 @@
 					</section>
 					<section>
 						<h2>It better be Easy</h2>
+						<img src="./images/frustrated.jpg" alt="A frustrated man puts his head down on the desk">
 					</section>
 					<section>
 						<h2>Poor UX</h2>
+					</section>
+					<section>
 						<p>Having scroll-to-zoom enabled on a scroll driven page</p>
 						<img src="./images/scroll-enabled.gif" alt="Animated gif of what happens when you accidentally scroll a map just by browsing the page" style="float:right; width: 45%;">
 						<img src="./images/scroll-disabled.gif" alt="Animated gif showing the proper result" style="float:left; width: 45%;">
 					</section>
 					<section>
-						<h2>Poor UX</h2>
 						<p>Small click targets</p>
 						<img src="./images/texting.jpg" alt="Will your map work on a mobile phone?">
 						<p><small>Photo: <a href="https://www.flickr.com/photos/melinamanfrinatti/">Melina Sampaio Manfrinatti</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/legalcode">CC BY-SA 2.0</a></small></p>
 					</section>
 					<section>
-						<h2>Poor UX</h2>
 						<p>How do you hover with your finger?</p>
 						<img src="./images/gallaxy-s6.jpg" alt="Will your map work on a mobile phone?">
 						<p><small>Photo: <a href="https://flic.kr/p/rodpeL">Kārlis Dambrāns</a> <a href="https://creativecommons.org/licenses/by/2.0/legalcode">CC BY 2.0</a></small></p>
+					</section>
+					<section>
+						<h2>Reinventing GIS in the Browser</h2>
+						<a href="http://mapbrief.com/2013/02/19/an-iconography-of-confusion-why-map-portals-dont-work-part-iv/">
+							<img src="./images/map-portal-1.jpg" alt="Title from Brian Timoney's Blog post">
+							<img src="./images/map-portal-2.jpg" alt="Tool bar of confusing icons">
+							<p><small>An Iconography of Confusion: Why Map Portals Don't Work, Part IV, Brian Timoney</a></small></p>
+						</a>
 					</section>
 				</section>
 
@@ -149,9 +161,11 @@
 						<h2>The Path to Story Map Mastery</h2>
 						<ol>
 							<li>Pre-built templates with point and click interface</li>
-							<li>Build upon open source templates to customize the experience</li>
-							<li>Code your story maps from scratch</li>
+							<li>Customize upon open source templates</li>
+							<li class="highlight">Code your story maps from scratch</li>
 						</ol>
+						<img src="./images/mario.jpg" alt="Mario jumping for a power-up" style="display: block; margin: 1em auto;">
+						<p><small>Photo: <a href="https://flic.kr/p/6FMA9v">Mario!</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/legalcode">CC BY-SA 2.0</a></small></p>
 					</section>
 					<section>
 						<h2>Pre-built Templates</h2>
@@ -172,7 +186,13 @@
 
 				<section>
 					<section>
+						<h2>How we craft <s>Story Maps</s> Spatial User Interfaces in the Southeast</h2>
+						<p>We start from scratch!</p>
+					</section>
+					<section>
 						<h2>Data Creation/Collection</h2>
+						<img src="./images/wms.jpg" alt="Weather web mapping service from NOAA">
+						<p>WMS example on <a href="https://www.mapbox.com/mapbox.js/example/v1.0.0/wms/">mapbox.com</a></p>
 					</section>
 					<section>
 						<h2>Google Spreadsheets</h2>
@@ -191,16 +211,36 @@
 					<section>
 						<h2>Feature Data</h2>
 						<p>Lends itself towards text files.  Easy to maintain, store right along side your project.  User interactions (clicks, scrolls, etc.) can give you all of the associated attribute data to use in pop-ups, infowindows, banners.</p>
+						<img src="./images/custom-markers.jpg" alt="National wildlife refuge logo as a map icon">
 					</section>
 					<section>
 						<h2>Rasters</h2>
 						<p>Lends itself to web services.  This is a great option if the product of your analysis is a continuous surface and you're less interested in click interactions.  Use ScienceBase or ArcGIS Online to create these services.</p>
 					</section>
-				</section>
-
-				<section>
 					<section>
-						<h2>Techniques</h2>
+						<h2>Data Analysis with Turf.js</h2>
+						<a href="http://turfjs.org/">
+							<img src="./images/turf.jpg" alt="">
+							<p><small>Turf.js</small></p>
+						</a>
+					</section>
+					<section>
+						<h2>Handling User Input</h2>
+						<p>Clicking on a marker is not the only, or even the best way to interact with map date.</p>
+						<p>Auto-complete input FTW!</p>
+						<img src="./images/mega-map.gif" alt="An animated gif of the Southeast Region's map of offices">
+					</section>
+					<section>
+						<p>How about a small thumbnail gallery to preivew the content before you click?</p>
+						<img src="./images/click.gif" alt="Click on a project's thumbnail image rather than map icon">
+					</section>
+					<section>
+						<p>Get the user's location with the Geolocation API in HTML 5 (with user's permission)</p>
+						<div style="height: 360px;">
+							<img src="./images/geolocation.gif" alt="Find the nearest ten offices based on the user's current location" style="width: 45%; float:left;">
+							<img src="./images/maptime-geolocation.gif" alt="Find the nearest Maptime chapter" style="width: 45%; float:right;">
+						</div>
+						<p>Good/Bad UX: Always give your user a hint when the application is loading/processing.</p>
 					</section>
 					<section>
 						<p>Filter a list using a map.</p>
@@ -209,10 +249,6 @@
 					<section>
 						<p>Filter large datasets on pan/zoom</p>
 						<img src="./images/yelp.gif" alt="Yelp.com's map automatically refilters the list when you pan or zoom">
-					</section>
-					<section>
-						<p>Display supplemental information in response to user interaction.</p>
-						<img src="./images/click.gif" alt="Show supplemental information on click">
 					</section>
 					<section>
 						<p>Zoom to a location to give a sense of distance and direction (don't over do it!)</p>
@@ -227,6 +263,8 @@
 					<section>
 						<h2>Can't Ignore Mobile</h2>
 						<p>According to <a href="http://www.similarweb.com/corp/resources/the-state-of-mobile-web-in-the-us-2015/">SimilarWeb’s State of Mobile Web US 2015 report</a>, roughly 56 percent of consumer traffic to the leading US websites is now from mobile devices.</p>
+						<img src="./images/usage.jpg" alt="Graph of mobile internet users vs desktop users">
+						<p><small>Graph: <a href="https://commons.wikimedia.org/wiki/File:Mobile_v_s_desktop_Internet.xlsx-1.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">CC BY-SA 3.0</a></small></p>
 					</section>
 					<section>
 						<h2>Responsive Web Design</h2>
@@ -244,8 +282,81 @@
 					<section>
 						<h2>Performance</h2>
 						<p>Forget the kitchen sink. 1 out of 4 customers will abandon a webpage that takes more than 4 seconds to load. - <a href="https://www.internetretailer.com/trends/consumers/">emarketer</a></p>
+						<img src="./images/kitchen-sink.jpg" alt="Everything but the kitchen sink">
+						<p><small>Photo: <a href="https://flic.kr/p/cmGyf5">Everything but the kitchen sink</a>. <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode">CC BY-NC-ND 2.0</a></small></p>
 					</section>
 				</section>
+
+				<section>
+					<section>
+						<h2>Examples!</h2>
+						<p>Many of these are a work-in-progress!</p>
+					</section>
+					<section>
+						<h2>Southeast Region Mega Map</h2>
+						<img src="./images/mega-map.gif" alt="Map of Southeast Region Offices, Refuges">
+						<p><a href="http://usfws.github.io/southeast-mega-map/">Mega map</a> is a one-stop shop for finding USFWS offices in the Southeast Region</p>
+					</section>
+					<section>
+						<h2>Southeast Conservation Adaptation Strategy (SECAS)</h2>
+						<img src="./images/click.gif" alt="Story map of the SECAS strategy projects">
+						<p><a href="http://usfws.github.io/secas-story-map/">The SECAS Story Map</a> lets the user explore conservation projects related to the strategy</p>
+					</section>
+					<section>
+						<h2>Rio Loco/Guanica Bay</h2>
+						<img src="./images/rioloco.gif" alt="Restoration work in the Rio loco/Guanica bay watershed">
+						<p><a href="http://fws.gov/southeast/rioloco/">The Rio Loco/Guanica Bay Watershed Partnership Initiative</a> lets the user explore several restoration efforts, the partners involved and their monetary contributions.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Resources!</h2>
+						<p>You don't have to do everything on your own.</p>
+					</section>
+
+					<section>
+						<h2>Technological Resources</h2>
+
+						<ul>
+							<li>Free Data Hosting: Post your layers to <a href="https://www.sciencebase.gov/catalog/">USGS Science Base</a></li>
+							<li>Free Web Hosting: <a href="http://fws.gov/southeast">southeast.fws.gov</a></li>
+							<li>Free <a href="http://leafletjs.com/plugins.html">Map Plugins</a> for common tasks like editing, clustering, geocoding, etc.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Your Regional External Affairs Digital Team!</h2>
+
+						<p><strong>Pitch us your story!</strong></p>
+
+						<ul>
+							<li>Roy Hewitt: Web Development</li>
+							<li>Katherine Taylor: Social Media</li>
+							<li>Jennifer Strickland: Content Development/Storytelling</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Online Resources</h2>
+						<ul>
+							<li><a href="http://alistapart.com/article/takecontrolofyourmaps">Take Control of your Maps by Paul Smith</a></li>
+							<li><a href="http://alistapart.com/article/hack-your-maps">Hack your Maps! by Young Hahn</a></li>
+							<li><a href="https://www.mapbox.com/guides/interaction/">Mapbox Guides: Interaction Online</a></li>
+							<li><a href="http://storymaps.arcgis.com/en/">ESRI: Story Maps</a></li>
+							<li><a href="http://storymap.knightlab.com/">Knight Foundation: StoryMap JS</a></li>
+							<li><a href="https://sites.google.com/a/fws.gov/gismap/">FWS Web Mapping Site; FWS Only :(</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Questions?</h2>
+					<h3><a href="mailto:roy_hewitt@fws.gov?subject=Story+Maps">Roy_Hewitt@fws.gov</a></h3>
+					<br><br>
+					<p>Slides: <a href="http://bit.ly/1SpWDgC">http://bit.ly/1SpWDgC</a></p>
+				</section>
+			</section>
 
 			</div>
 
