@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Maps in User Interface Design</title>
+
+		<meta name="description" content="An online presentation about story maps and using geography/maps to build user interfaces.">
+		<meta name="author" content="Roy Hewitt">
+
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@r0yhewitt">
+		<meta name="twitter:title" content="Story Maps">
+		<meta name="twitter:description" content="An online presentation about story maps and using geography/maps to build user interfaces.">
+		<meta name="twitter:creator" content="@r0yhewitt">
+		<!-- Twitter Summary card images must be at least 120x120px -->
+		<meta name="twitter:image" content="http://slides.royhewitt.com/story-maps/img/roy.jpg">
+
+		<!-- Open Graph data -->
+		<meta property="og:title" content="Story Maps and Spatial UI" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="http://slides.royhewitt.com/story-maps-spatial-ux/" />
+		<meta property="og:image" content="http://slides.royhewitt.com/story-maps/img/roy.jpg" />
+		<meta property="og:description" content="An online presentation about story maps and using geography/maps to build user interfaces." />
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Story Maps</h1>
+					<h3>Using Maps to Craft User Interfaces</h3>
+					<p>May 17, 2016 <br>Cookeville, TN</p>
+					<p>Slides: <a href="http://bit.ly/1SpWDgC">bit.ly/1SpWDgC</a></p>
+				</section>
+
+				<section>
+					<section>
+						<img src="https://raw.githubusercontent.com/rhewitt22/slides/gh-pages/story-maps/img/roy.jpg" alt="Photograph of Roy Hewitt">
+						<h2>Roy Hewitt</h2>
+						<p>Job: Regional Web Developer</p>
+						<p>Background: Biology, GIS</p>
+						</section>
+						<section>
+							<h2>Agenda</h2>
+							<ol>
+								<li>What is a Story Map?</li>
+								<li>Setting yourself up for success</li>
+								<li>Our approach in the Southeast</li>
+								<li>Challenges</li>
+								<li>Examples</li>
+								<li>Resources</li>
+							</ol>
+						</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>What is a Story Map?</h2>
+						<blockquote>&ldquo;Story maps use geography as a means of organizing and presenting information. They tell the story of a place, event, issue, trend, or pattern in a geographic context. They combine interactive maps with other rich content—text, photos, video, and audio—within <strong class="highlight">user experiences</strong> that are basic and intuitive.&rdquo;</blockquote>
+						<small><a href="http://storymaps.arcgis.com/en/articles/what-is-a-story-map/">&mdash; ESRI</a>, emphasis is mine.</small>
+					</section>
+					<section>
+						<h2>Why Build a Story Map?</h2>
+						<ul>
+							<li><em>Where</em> matters; nothing happens in a vacuum</li>
+							<li>Wrap an analysis in context for lay audiences</li>
+							<li>Let your audience explore your data on their own terms</li>
+							<li>Engage new audiences</li>
+						</ul>
+						<img src="./images/marshmallow.gif" alt="Marshmallow in a vacuum">
+						<p><small><a href="http://gph.is/1tmjrl9">Marshmallow in a vacuum</a></small></p>
+					</section>
+					<section>
+						<h2>What Makes a Good Story Map?</h2>
+						<ul>
+							<li>Know your audience</li>
+							<li>Write in plain language</li>
+						  <li>Know what&rsquo;s important</li>
+							<li class="highlight">A good user experience</li>
+						</ul>
+						<aside class="notes">
+				        How big should the map be in relation to the rest of the content?<br>
+								Find a basemap pretty enough to be the main event <br>
+								How do the rest of the elements (features, raster layers, popups) fit into the design <br>
+								How do you handle user interaction (scrolling, keyboard, clicks, swipes)
+				    </aside>
+					</section>
+					<section>
+						<h2>Know Your Audience</h2>
+						<p>Content (text, iconography, etc.) and interaction should be targeted at the lowest common denominator.  Don't assume GIS proficiency; offer more than one way to access information.</p>
+					</section>
+					<section>
+						<h2>Know What's Important</h2>
+						<p>If you're making a story map to share photos from a trip ensure the size of the photos is relative to their importance.  It doesn't make sense to have a full screen map with tiny thumbnail images.</p>
+					</section>
+					<section>
+						<h2 class="highlight">User Experience</h2>
+						<blockquote><span class="highlight">User experience</span> (UX) focuses on having a deep understanding of users, what they need, what they value, their abilities, and also their limitations. &mdash;<a href="http://www.usability.gov/what-and-why/user-experience.html">usability.gov</a></blockquote>
+					</section>
+					<section>
+						<h2>It better be Easy</h2>
+						<img src="./images/frustrated.jpg" alt="A frustrated man puts his head down on the desk">
+						<p>If your users can't find the information they're after very quickly they'll leave your website as fast as they can for the safe haven that is internet cat videos.</p>
+					</section>
+					<section>
+						<h2>Hack your Maps</h2>
+						<blockquote>“Have you ever taken apart a map? Worked with a map as a critical part of your design?” - Young Hahn, <a href="http://alistapart.com/article/hack-your-maps">‘Hack Your Maps’</a></blockquote>
+						<p>Maps are only part of the equation.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Setting Yourself up for Success</h2>
+						<p>Story map design principles to live by.</p>
+					</section>
+					<section>
+						<p>Many of the following suggestions come from a 2012 <a href="http://mapbrief.com/2012/08/01/how-the-public-actually-uses-local-government-web-maps-metrics-from-denver/">blog post</a> by GIS consultant Brian Timoney.</p>
+					</section>
+					<section>
+						<h2>Focus</h2>
+						<img src="./images/magnifying-glass.jpg" alt="A magnifying glass brings an item into focus">
+						<p><small>Magnification by TheGiantVermin <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode">CC BY NC ND</a></small></p>
+						<p>Rather than trying to create a single map that does everything, create several maps that tell one story <em class="highlight">well</em>.</p>
+					</section>
+					<section>
+						<h2>Concentrate on SEO</h2>
+						<p>Search Engine Optimization (SEO) is extremely important.  The majority of your users will find your content through a Google Search, not through ten levels of nested navigation on your Agency's homepage.</p>
+					</section>
+					<section>
+						<h2>Mimic Google Search</h2>
+						<img src="./images/mega-map.gif" alt="Demonstration of autocomplete search box">
+						<p>Everyone is extremely well trained in the use of a search box.  Make the same data that is available on the map search-able through an autocomplete text input.</p>
+					</section>
+					<section>
+						<h2>No One Cares About Your Database Schema</h2>
+						<p>You might have set up the best relational database schema imagineable, but your users don't care.  They don't want to type street number, name, city and/or state into different text inputs.  Provide a single text input that searches across the most fields that makes sense.</p>
+					</section>
+					<section>
+						<h2>Take Care in Setting Defaults</h2>
+						<img src="./images/national-map.jpg" alt="View of National Map Viewer">
+						<p>Thinking about adding a third basemap option?  A fifth feature layer for users to toggle on and off? According to analytics data from Denver only 2% of users toggle a different basemap.</p>
+					</section>
+					<section>
+						<h2>Social Media Integration</h2>
+						<img src="./images/social-media-integration.jpg" alt="Example of how a page shows up on facebook with social media meta tags">
+						<p>Let other people advertise for you.  Including some simple metadata on your page can greatly increase the likelyhood others will share your story map on social media.  This metadata also increases the liklihood that someone will click on your content when it shows up in their feed.</p>
+					</section>
+					<section>
+						<blockquote>Makers of map portals for the general public fundamentally misunderstand what users want.  They want rapid search-and-retrieval with their results contextualized on a map.  The map plays a supporting role–it’s not the lead actor.  So if you’re forcing your users to interact with toolbars and map navigation before they get their answer, you have your users’ priorities backwards.</blockquote>
+						<p>- Brian Timoney</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>The Path to Story Map Mastery</h2>
+						<ol>
+							<li>Pre-built templates with point and click interface</li>
+							<li>Customize upon open source templates</li>
+							<li class="highlight">Code your story maps from scratch</li>
+						</ol>
+						<img src="./images/mario.jpg" alt="Mario jumping for a power-up" style="display: block; margin: 1em auto;">
+						<p><small>Photo: <a href="https://flic.kr/p/6FMA9v">Mario!</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/legalcode">CC BY-SA 2.0</a></small></p>
+					</section>
+					<section>
+						<h2>Pre-built Templates</h2>
+						<img src="./images/esri-templates.jpg" alt="A banner from the ESRI website asking what kind of story do you want to tell">
+						<p>ESRI provides a series of pre-built templates that you can fill with your own content</p>
+					</section>
+					<section>
+						<h2>Open Source Templates</h2>
+						<img src="./images/esri-github.jpg" alt="Results from searching 'Story' on ESRI's GitHub page">
+						<p>ESRI provides about a dozen open source templates on their <a href="https://github.com/Esri?utf8=%E2%9C%93&query=story">GitHub</a> page.  This option allows you to dive into the code to change anything and everything.</p>
+					</section>
+					<section>
+						<h2>Coding your Maps from Scratch</h2>
+						<img src="./images/career.gif" alt="Animated gif of career.royhewitt.com">
+						<p>Highest level of difficulty, but limitless options for creativity. In the Southeast your External Affairs digital team is here to help!</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Crafting <s>Story Maps</s> Spatial User Interfaces</h2>
+						<p>Website design techniques that rely on mapping.</p>
+					</section>
+					<section>
+						<h2>Autocomplete Text Input</h2>
+						<img src="./images/mega-map.gif" alt="An animated gif of the Southeast Region's map of offices">
+						<p>Clicking on a marker is not the only, or even the best way to interact with map data.</p>
+					</section>
+					<section>
+						<h2>Thubmnail Gallery</h2>
+						<img src="./images/click.gif" alt="Click on a project's thumbnail image rather than map icon">
+						<p>How about a small thumbnail gallery to preivew the content before you click?</p>
+					</section>
+					<section>
+						<h2>Geolocation API</h2>
+						<img src="./images/geolocation.gif" alt="Find the nearest ten offices based on the user's current location">
+						<p>Get the user's location with the Geolocation API in HTML 5 (with user's permission)</p>
+					</section>
+					<section>
+						<p>Manage a Specie's state range in the At-Risk Species Finder</p>
+						<img src="./images/range.gif" alt="Use a map to manage the state range for a species in the database">
+						<p>Internally the range is managed as a list of states.  The map gives a handy UI to add/remove states from the list.</p>
+					</section>
+					<section>
+						<p>Filter a list using a map.</p>
+						<img src="./images/filter.gif" alt="Filter a list using a map">
+					</section>
+					<section>
+						<p>Filter large datasets on pan/zoom</p>
+						<img src="./images/yelp.gif" alt="Yelp.com's map automatically refilters the list when you pan or zoom">
+					</section>
+					<section>
+						<p>Zoom to a location to give a sense of distance and direction (don't over do it!)</p>
+						<img src="./images/flyto.gif" alt="Show supplemental information on click">
+					</section>
+					<section>
+						<p>Clip and Ship: Allow user to identify AOI, download data.</p>
+						<img src="./images/clip-and-ship.gif" alt="Let the user draw an AOI, download data within that AOI">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Poor UX</h2>
+					</section>
+					<section>
+						<p>Having scroll-to-zoom enabled on a scroll driven page</p>
+						<img src="./images/scroll-enabled.gif" alt="Animated gif of what happens when you accidentally scroll a map just by browsing the page" style="float:right; width: 45%;">
+						<img src="./images/scroll-disabled.gif" alt="Animated gif showing the proper result" style="float:left; width: 45%;">
+					</section>
+					<section>
+						<p>Small click targets</p>
+						<img src="./images/texting.jpg" alt="Will your map work on a mobile phone?">
+						<p><small>Photo: <a href="https://www.flickr.com/photos/melinamanfrinatti/">Melina Sampaio Manfrinatti</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/legalcode">CC BY-SA 2.0</a></small></p>
+					</section>
+					<section>
+						<p>How do you hover with your finger?</p>
+						<img src="./images/gallaxy-s6.jpg" alt="Will your map work on a mobile phone?">
+						<p><small>Photo: <a href="https://flic.kr/p/rodpeL">Kārlis Dambrāns</a> <a href="https://creativecommons.org/licenses/by/2.0/legalcode">CC BY 2.0</a></small></p>
+					</section>
+					<section>
+						<h2>Reinventing GIS in the Browser</h2>
+						<a href="http://mapbrief.com/2013/02/19/an-iconography-of-confusion-why-map-portals-dont-work-part-iv/">
+							<img src="./images/map-portal-1.jpg" alt="Title from Brian Timoney's Blog post">
+							<img src="./images/map-portal-2.jpg" alt="Tool bar of confusing icons">
+							<p><small>An Iconography of Confusion: Why Map Portals Don't Work, Part IV, Brian Timoney</a></small></p>
+						</a>
+					</section>
+					<section>
+						<h2>Always show a Loading state</h2>
+						<div style="height: 360px">
+							<img src="./images/geolocation.gif" alt="Find the nearest offices based on your current location" style="width: 45%; float:left;">
+							<img src="./images/maptime-geolocation.gif" alt="Find the nearest Maptime chapter" style="width: 45%; float:right;">
+						</div>
+						<p>If the user clicks a button and doesn't have any indication that something is happening they tend to continue to mash said button.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Challenges</h2>
+					</section>
+					<section>
+						<h2>Can't Ignore Mobile</h2>
+						<p>According to <a href="http://www.similarweb.com/corp/resources/the-state-of-mobile-web-in-the-us-2015/">SimilarWeb’s State of Mobile Web US 2015 report</a>, roughly 56 percent of consumer traffic to the leading US websites is now from mobile devices.</p>
+						<img src="./images/usage.jpg" alt="Graph of mobile internet users vs desktop users">
+						<p><small>Graph: <a href="https://commons.wikimedia.org/wiki/File:Mobile_v_s_desktop_Internet.xlsx-1.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">CC BY-SA 3.0</a></small></p>
+					</section>
+					<section>
+						<h2>Responsive Web Design</h2>
+						<p>Adapting web content based on the available screen realestate for phones, widescreens and everything in between through fluid layouts.</p>
+						<img src="./images/responsive.jpg" alt="The same site on several devices of different sizes">
+						<p><small>Photo: <a href="https://flic.kr/p/bYxKaN">Responsive design</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/legalcode">CC BY-SA 2.0</a></small></p>
+					</section>
+					<section>
+						<h2>Accessibility</h2>
+						<p>How do non-sighted, motor impaired users navigate?</p>
+						<p>Use of tab index, <a href="https://www.w3.org/WAI/intro/aria">Accessible Rich Internet Applications (ARIA)</a></p>
+						<img src="./images/wheelchair.jpg" alt="Paralympian races in a wheelchair">
+						<p><small>Photo: Australian Paralympic Committee <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">CC BY-SA 3.0</a></small></p>
+						<p>Another great reason to give your users more than one way to access your page's information.</p>
+					</section>
+					<section>
+						<h2>Performance</h2>
+						<p>Forget the kitchen sink. 1 out of 4 customers will abandon a webpage that takes more than 4 seconds to load. - <a href="https://www.internetretailer.com/trends/consumers/">emarketer</a></p>
+						<img src="./images/kitchen-sink.jpg" alt="Everything but the kitchen sink">
+						<p><small>Photo: <a href="https://flic.kr/p/cmGyf5">Everything but the kitchen sink</a>. <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode">CC BY-NC-ND 2.0</a></small></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Examples!</h2>
+						<p>Many of these are a work-in-progress!</p>
+					</section>
+					<section>
+						<h2>Southeast Region Mega Map</h2>
+						<img src="./images/mega-map.gif" alt="Map of Southeast Region Offices, Refuges">
+						<p><a href="http://usfws.github.io/southeast-mega-map/">Mega map</a> is a one-stop shop for finding USFWS offices in the Southeast Region</p>
+					</section>
+					<section>
+						<h2>Southeast Conservation Adaptation Strategy (SECAS)</h2>
+						<img src="./images/click.gif" alt="Story map of the SECAS strategy projects">
+						<p><a href="http://usfws.github.io/secas-story-map/">The SECAS Story Map</a> lets the user explore conservation projects related to the strategy</p>
+					</section>
+					<section>
+						<h2>Rio Loco/Guanica Bay</h2>
+						<img src="./images/rioloco.gif" alt="Restoration work in the Rio loco/Guanica bay watershed">
+						<p><a href="http://fws.gov/southeast/rioloco/">The Rio Loco/Guanica Bay Watershed Partnership Initiative</a> lets the user explore several restoration efforts, the partners involved and their monetary contributions.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Resources!</h2>
+						<p>You don't have to do everything on your own.</p>
+					</section>
+
+					<section>
+						<h2>Technological Resources</h2>
+
+						<ul>
+							<li>Free Data Hosting: Post your layers to <a href="https://www.sciencebase.gov/catalog/">USGS Science Base</a> (nothing sensitive, please!)</li>
+							<li>Free Web Hosting: <a href="http://fws.gov/southeast">southeast.fws.gov</a></li>
+							<li>Free <a href="http://leafletjs.com/plugins.html">Map Plugins</a> for common tasks like editing, clustering, geocoding, etc.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Your Regional External Affairs Digital Team!</h2>
+
+						<p><strong>Pitch us your story!</strong></p>
+
+						<ul>
+							<li>Roy Hewitt: Web Development</li>
+							<li>Katherine Taylor: Social Media</li>
+							<li>Jennifer Strickland: Content Development/Storytelling</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Online Resources</h2>
+						<ul>
+							<li><a href="http://alistapart.com/article/takecontrolofyourmaps">Take Control of your Maps by Paul Smith</a></li>
+							<li><a href="http://alistapart.com/article/hack-your-maps">Hack your Maps! by Young Hahn</a></li>
+							<li><a href="https://www.mapbox.com/guides/interaction/">Mapbox Guides: Interaction Online</a></li>
+							<li><a href="http://storymaps.arcgis.com/en/">ESRI: Story Maps</a></li>
+							<li><a href="http://storymap.knightlab.com/">Knight Foundation: StoryMap JS</a></li>
+							<li><a href="https://sites.google.com/a/fws.gov/gismap/">FWS Web Mapping Site; FWS Only :(</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Questions?</h2>
+					<h3><a href="mailto:roy_hewitt@fws.gov?subject=Story+Maps">Roy_Hewitt@fws.gov</a></h3>
+					<br><br>
+					<p>Slides: <a href="http://bit.ly/1SpWDgC">http://bit.ly/1SpWDgC</a></p>
+				</section>
+			</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
