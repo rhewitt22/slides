@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="A presentation highlighting the Natures Good Neighbors Campaign website.">
+
+		<title>Nature's Good Neighbors Campaign Website</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/roy.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Nature’s Good Neighbors</h1>
+
+					<img src="./lib/img/ngn-homepage.gif" alt="An animated view of all 39 stories from the campaign homepage" style="border: 0; background: none;">
+				</section>
+
+				<section>
+					<h2>Mobile first layout</h2>
+
+					<img src="./lib/img/ngn-mobile.png" alt="A mobile phone with a campaign website featuring two smiling spouses" style="max-height: 70vh; border: 0; background: none;">
+				</section>
+
+				<section>
+					<h2>Lead character feature image</h2>
+
+					<img src="./lib/img/feature-image.jpg" alt="A woman inspects berries growing on a vine." style="max-height: 70vh;">
+				</section>
+
+				<section>
+					<h2>Map of stories</h2>
+
+					<img src="./lib/img/campaign-map.jpg" alt="A map of the USA showing blue dots representing stories from the campaign." style="max-height: 70vh;">
+				</section>
+
+				<section>
+					<h2>Targeted social media</h2>
+				</section>
+
+				<section>
+					<h2>Google Analytics custom events</h2>
+				</section>
+
+				<section>
+					<h2>Styleguide</h2>
+
+					<img src="./lib/img/styleguide.gif" alt="An animated gif showing all of the different website features as a styleguide" >
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				history: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
